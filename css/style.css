@@ -1,0 +1,493 @@
+/* フィネガンズ・ウェイク日本語版スタイルシート */
+
+/* ベース設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "MS Mincho", serif;
+    background-color: #f0ece0;
+    color: #333;
+    line-height: 1.7;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* サイドバー */
+.sidebar {
+    width: 250px;
+    background-color: #2d2d2d;
+    color: #eee;
+    padding: 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-bottom: 15px;
+}
+
+.nav-list a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover, .nav-list a.active {
+    color: #fff;
+}
+
+.nav-list a.active {
+    border-left: 3px solid #fff;
+    padding-left: 10px;
+}
+
+/* メインコンテンツ */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.chapter-title {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chapter-title h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.chapter-title h3 {
+    font-weight: normal;
+    color: #666;
+    font-size: 1.3em;
+}
+
+/* 読書オプション */
+.reading-options {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.reading-options button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.reading-options button:hover {
+    background-color: #555;
+}
+
+/* 章コンテンツ */
+.chapter-content {
+    margin-bottom: 40px;
+    line-height: 2;
+}
+
+.chapter-content p {
+    text-indent: 1em;
+    margin-bottom: 1.8em;
+}
+
+/* 並列テキスト表示 */
+.parallel-text {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 20px;
+}
+
+.original, .translation {
+    flex: 1;
+    padding: 10px;
+}
+
+.original {
+    border-right: 1px solid #eee;
+    color: #666;
+}
+
+/* 縦書き設定 */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    height: 600px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.vertical-text .parallel-text {
+    flex-direction: column;
+}
+
+/* ルビ設定 */
+ruby {
+    ruby-align: center;
+}
+
+rt {
+    font-size: 0.6em;
+    color: #777;
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+/* 注釈 */
+.note {
+    color: #c00;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.notes-panel {
+    background-color: #f9f7f1;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: none;
+}
+
+.notes-panel h4 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.note-item {
+    margin-bottom: 20px;
+}
+
+.note-number {
+    font-weight: bold;
+    color: #c00;
+    margin-right: 10px;
+}
+
+/* 引用ボックス */
+.quote-box {
+    background-color: #f9f7f1;
+    padding: 20px;
+    border-left: 4px solid #ddd;
+    margin: 20px 0;
+}
+
+.quote-box blockquote {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote-box .translation {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+/* CTA ボタン */
+.cta-buttons {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-buttons a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.start-button {
+    background-color: #333;
+    color: white;
+}
+
+.start-button:hover {
+    background-color: #555;
+}
+
+.about-button {
+    border: 1px solid #333;
+    color: #333;
+}
+
+.about-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* 注釈・解説ページ */
+.notes-content, .about-content {
+    line-height: 1.8;
+}
+
+.notes-section, .about-section {
+    margin-bottom: 40px;
+}
+
+.notes-section h4, .about-section h4 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.character-note, .motif-note {
+    margin-bottom: 25px;
+}
+
+.character-note h5, .motif-note h5, .example-box h5 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.example-box {
+    background-color: #f9f7f1;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/* 準備中表示 */
+.under-construction {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+    font-style: italic;
+}
+
+.preview-box {
+    background-color: #f9f7f1;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.preview-box h4 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* ページナビゲーション */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.page-nav a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.page-nav a:hover {
+    color: #000;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* アバウトページ固有スタイル */
+.about-section ul, .about-section ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.about-section li {
+    margin-bottom: 8px;
+}
+
+.about-section dl {
+    margin: 15px 0;
+}
+
+.about-section dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.about-section dd {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.contact-email {
+    font-family: monospace;
+    background-color: #f9f7f1;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 15px;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .nav-list li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .parallel-text {
+        flex-direction: column;
+    }
+    
+    .original, .translation {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .original {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+    }
+    
+    .reading-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .reading-options button {
+        margin-bottom: 10px;
+    }
+    
+    .vertical-text {
+        height: 400px;
+    }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+        color: #eee;
+    }
+    
+    .main-content {
+        background-color: #333;
+    }
+    
+    .chapter-title {
+        border-bottom-color: #444;
+    }
+    
+    .chapter-title h3 {
+        color: #bbb;
+    }
+    
+    .parallel-text {
+        border-bottom-color: #444;
+    }
+    
+    .original {
+        border-right-color: #444;
+        color: #bbb;
+    }
+    
+    .notes-panel, .quote-box, .example-box, .preview-box {
+        background-color: #2a2a2a;
+    }
+    
+    .note-number {
+        color: #ff6b6b;
+    }
+    
+    .about-button {
+        border-color: #ddd;
+        color: #ddd;
+    }
+    
+    .about-button:hover {
+        background-color: #444;
+    }
+    
+    .page-nav {
+        border-top-color: #444;
+    }
+    
+    .page-nav a {
+        color: #bbb;
+    }
+    
+    .page-nav a:hover {
+        color: #fff;
+    }
+    
+    footer {
+        border-top-color: #444;
+        color: #999;
+    }
+}
